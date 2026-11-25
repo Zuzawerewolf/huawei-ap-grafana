@@ -1,0 +1,6 @@
+config.json
+password
+*.pass
+*.prom
+known_hosts
+__pycache__/

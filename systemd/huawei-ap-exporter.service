@@ -1,0 +1,21 @@
+[Unit]
+Description=Coleta métricas dos APs Huawei por SSH
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+Environment=HUAWEI_AP_CONFIG=/etc/huawei-ap/config.json
+Environment=HUAWEI_AP_PASS_FILE=/etc/huawei-ap/password
+Environment=HUAWEI_AP_KNOWN_HOSTS=/var/lib/huawei-ap/known_hosts
+Environment=HUAWEI_AP_PROM_FILE=/var/lib/prometheus/node-exporter/huawei-ap.prom
+ExecStart=/usr/bin/python3 /usr/local/bin/huawei_ap_exporter.py
+TimeoutStartSec=90
+StateDirectory=huawei-ap
+ProtectSystem=strict
+ProtectHome=yes
+PrivateTmp=yes
+ReadWritePaths=/var/lib/prometheus/node-exporter /var/lib/huawei-ap
+
+[Install]
+WantedBy=multi-user.target

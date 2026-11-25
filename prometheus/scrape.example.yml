@@ -1,0 +1,7 @@
+# Trecho para o prometheus.yml. Se o node_exporter já é coletado, não precisa de nada novo:
+# as métricas huawei_* chegam junto com as do node_exporter.
+scrape_configs:
+  - job_name: node
+    scrape_interval: 30s
+    static_configs:
+      - targets: ["192.0.2.5:9100"]   # máquina que roda o exporter + node_exporter

@@ -1,0 +1,10 @@
+[Unit]
+Description=Coleta dos APs Huawei a cada 30 segundos
+
+[Timer]
+OnBootSec=20s
+OnUnitActiveSec=30s
+AccuracySec=2s
+
+[Install]
+WantedBy=timers.target

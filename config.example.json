@@ -1,0 +1,21 @@
+{
+  "user": "admin",
+  "aps": [
+    {
+      "name": "ap-sala",
+      "host": "192.0.2.10",
+      "model": "AP673",
+      "site": "sala",
+      "cli": "mdcli",
+      "uplink": "MultiGE0/0/0"
+    },
+    {
+      "name": "ap-quarto",
+      "host": "192.0.2.11",
+      "model": "AP361",
+      "site": "quarto",
+      "cli": "vrp",
+      "uplink": "GigabitEthernet0/0/0"
+    }
+  ]
+}
